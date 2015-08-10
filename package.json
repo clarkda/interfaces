@@ -23,9 +23,6 @@
   "bugs": {
     "url": "https://github.com/clarkda/interfaces/issues"
   },
-  "dependencies": {
-    "underscore" : "*"
-  },
   "devDependencies" : {
     "mocha": "*",
     "mockery": "*"
