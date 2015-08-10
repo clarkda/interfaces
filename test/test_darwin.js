@@ -1,5 +1,4 @@
-var _           = require('underscore')
-  , assert      = require('assert')
+var assert      = require('assert')
   , interfaces  = require('..')
   , mocha       = require('mocha')
   , mockery     = require('mockery');
@@ -26,7 +25,7 @@ describe('interface() - darwin', function() {
   mockery.registerMock('os', require('./mock/os.js'));
   mockery.registerMock('./lib/utils', require('./mock/lib-utils.js'));
 
-  _.each(interfaces()[config.interface], function(address) {
+  interfaces()[config.interface].forEach(function(address) {
     it('- mac address should equal ' + config.macAddress, function() {
       assert.equal(config.macAddress, address.mac);
     });
@@ -52,7 +51,7 @@ describe('interface() - darwin', function() {
   mockery.registerMock('os', require('./mock/os.js'));
   mockery.registerMock('./lib/utils', require('./mock/lib-utils.js'));
 
-  _.each(interfaces()[config.interface], function(address) {
+  interfaces()[config.interface].forEach(function(address) {
     it('- mac address should equal ' + config.macAddress, function() {
       assert.equal(config.macAddress, address.mac);
     });

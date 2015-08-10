@@ -1,14 +1,13 @@
 module.exports = (function() {
   'use strict';
 
-  var _     = require('underscore')
-    , os    = require('os')
+  var os    = require('os')
     // ..
     , interfaces  = os.networkInterfaces()
     , regex       = /(([0-9a-f]{1,2}[\.:-]){5}([0-9a-f]{1,2}))/i
     , utils = require('./lib/utils');
 
-  _.each(Object.keys(interfaces), function(interfaceName) {
+  Object.keys(interfaces).forEach(function(interfaceName) {
     var ifconfig = utils.getInterfaceInfo(interfaceName)
       , macAddress  = '00:00:00:00:00:00'
       , matches = regex.exec(ifconfig);
